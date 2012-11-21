@@ -137,46 +137,30 @@ function GhostRecon:WhereAmI()
 		if instType == "party" then
 			local diff = GetDungeonDifficultyID()
 			
-			
 			if diff == 2 then
 				name = "Heroic "..name
 			end
 			
 		elseif instType == "raid" then
-			local diff, diff2 = GetRaidDifficultyID()
+			local _, _, difficultyIndex, _, max_players = GetInstanceInfo()
 			
 			
-			-- 10-man
-			if diff == 1 then
-				if diff2 == 3 then
- 					-- heroic
-					name = name.." (10H)"
-				else
- 					-- normal
- 					name = name.." (10)"
-				end
-				
-			elseif diff == 2 then
-				if diff2 == 3 or diff2 == 4 then
- 					-- heroic
-					name = name.." (25H)"
-				else
- 					-- normal
- 					name = name.." (25)"
-				end
-				
-			elseif diff == 3 then
-				-- 10-man heroic
-				name = name.." (10H)"
-				
-			elseif diff == 4 then
-				-- 25-man heroic
-				name = name.." (25H)"
-			end
+			if difficultyIndex == 1 then
+    			name = name.." (10)"
+			elseif difficultyIndex == 2 then
+    			name = name.." (25)"
+			elseif difficultyIndex == 3 then
+    			name = name.." (10H)"
+			elseif difficultyIndex == 4 then
+    			name = name.." (25H)"
+			else
+			
+			end		
+			
 		end
 	end
 		
-    return name
+  return name
 end
 
 function GhostRecon:UnitAffectedByImmunityDebuff(unitId)
