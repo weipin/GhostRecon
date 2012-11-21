@@ -1,0 +1,17 @@
+## Title: Ghost: Recon
+## Notes: Mob Crowd Control & Ability Tracker
+## Author: Footrot / Continued by Sargeant
+
+## Interface: 50001
+## Version: 0.10.9
+## SavedVariables: GhostReconDB
+
+## OptionalDeps: LibDataBroker-1.1, Prat-3.0, Chatter, ButtonFacade
+
+Core.lua
+Database.lua
+Tooltip.lua
+AbilityBar.lua
+Config.lua
+Comms.lua
+Search.lua
